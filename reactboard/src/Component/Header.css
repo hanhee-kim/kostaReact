@@ -1,0 +1,27 @@
+#logo {
+    font-size: large;
+    color: black;
+}
+
+.nav-items {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav-item {
+    display: inline-block;
+    height: 50px;
+    padding: 0 10px;
+    text-align: center;
+    min-width: 80px;
+    /* margin: 0 10px; */
+    line-height: 50px;
+}
+
+/* Link 태그는 최종적으로 a 태그로 변경됨 */
+.nav-item > a {
+    font-size: small;
+    text-decoration: none;
+    color: darkgray;
+}
