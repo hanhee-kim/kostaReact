@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { persistReducer } from "redux-persist";
 import {
-import { persistReducer } from 'redux-persist';
   Collapse,
   Navbar,
   Nav,
@@ -22,8 +22,8 @@ const BankTop = () => {
     setOpen(!open);
   };
   //리덕스의 스토어중에 id값이 있으면 가져와서 userId에 담아 쓰겠다는 의미
-  const user = useSelector(state=>state.persistReducer);
-  // const userId = useSelector((state) => state.id);
+  const user = useSelector((state) => state.persistReducer);
+  const userId = useSelector((state) => state.id);
 
   return (
     <div>
@@ -38,7 +38,7 @@ const BankTop = () => {
           <Nav navbar className="ml-auto">
             <NavItem>{userId}</NavItem>
             <NavItem>
-              {(user ===undefined || userId === "") ? (
+              {user === undefined || userId === "" ? (
                 <NavLink href="/login">로그인</NavLink>
               ) : (
                 <NavLink href="/logout">로그아웃</NavLink>

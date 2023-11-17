@@ -95,7 +95,7 @@ function Withdraw() {
         </FormGroup>
       </Form>
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>입금 성공</ModalHeader>
+        <ModalHeader toggle={toggle}>출금 성공</ModalHeader>
         <ModalBody>{message}</ModalBody>
         <ModalFooter>
           <Button color="primary" onClick={toggle}>

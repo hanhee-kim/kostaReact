@@ -32,7 +32,7 @@ function Deposit() {
   const submit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:8090/deposit/${id}`, { money: money })
+      .put(`http://localhost:8090/deposit/${id}`, { money })
       .then((res) => {
         setMessage(`${res.data.id}님의 잔액은 ${res.data.balance}원입니다.`);
         console.log(res.data);

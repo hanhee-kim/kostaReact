@@ -30,8 +30,10 @@ const DetailForm = () => {
   const likeBoard = (e) => {
     if (heart) {
       //true면(눌러져있으면)
+      // setBoard({...board},[likecount]:board.likecount-1);
       setHeart(false);
     } else {
+      // setBoard({...board},[likecount]:board.likecount+1);
       setHeart(true);
     }
   };
@@ -40,8 +42,9 @@ const DetailForm = () => {
       .get(`http://localhost:8090/boarddetail/${num}`)
       .then((res) => {
         console.log(res);
-        setBoard({ ...res.data });
-        let fileurl = res.data.fileurl;
+        setBoard({ ...res.data.board });
+        setHeart(res.data.heart);
+        let fileurl = res.data.board.fileurl;
         let filenums = fileurl.split(",");
         setImages([...filenums]);
       })

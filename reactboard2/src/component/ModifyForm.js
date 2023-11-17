@@ -17,8 +17,8 @@ const ModifyForm = () => {
       .get(`http://localhost:8090/boarddetail/${num}`)
       .then((res) => {
         console.log(res);
-        setBoard(res.data);
-        let fileurl = res.data.fileurl; //1,2,3
+        setBoard(res.data.board);
+        let fileurl = res.data.board.fileurl; //1,2,3
         let filenums = fileurl.split(","); //1,2,3-> [1 2 3]
         let filearr = []; // [{type:"img",data:1},{type:"img",data:2},{type:"img",data:3}]
         for (let filenum of filenums) {
